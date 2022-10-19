@@ -1,0 +1,24 @@
+{
+    "prefix": "!test",
+    "commands": {
+        "onStart": [
+            {
+                "service": "testService",
+                "method": "onStartFunc"
+            }
+        ],
+        "onClose": [
+            {
+                "service": "testService",
+                "method": "onCloseFunc"
+            }
+        ],
+        "onMessage": [
+            {
+                "message": "test",
+                "service": "testService",
+                "method": "onMessageFunc"
+            }
+        ]
+    }
+}
