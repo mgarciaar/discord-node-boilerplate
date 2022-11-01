@@ -1,10 +1,3 @@
-import "./style.css";
-import { setupCounter } from "./counter";
+import config from './config/config';
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    gg  
-  </div>
-`;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+console.log(config);
