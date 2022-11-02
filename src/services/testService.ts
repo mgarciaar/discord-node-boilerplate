@@ -1,11 +1,13 @@
-export const onStartFunction = () => {
-  return "start";
+import { CallbackParams } from 'src/config/config.d.js';
+
+export const onStartFunction = ({ discordBot }: CallbackParams) => {
+    discordBot.sendMessage('eeehehehe');
 };
 
 export const onCloseFunction = () => {
-  console.log("close");
+    console.log('close');
 };
 
-export const onMessageFunc = () => {
-  console.log("message");
+export const onMessageFunc = ({ discordBot }: CallbackParams) => {
+    discordBot.sendMessage('uffffffff');
 };
