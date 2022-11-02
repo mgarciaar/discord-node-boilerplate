@@ -1,7 +1,7 @@
 import { CallbackParams } from 'src/config/config.d.js';
 
 export const onStartFunction = ({ discordBot }: CallbackParams) => {
-    discordBot.sendMessage('eeehehehe');
+    discordBot.sendMessage('on start');
 };
 
 export const onCloseFunction = () => {
@@ -9,5 +9,5 @@ export const onCloseFunction = () => {
 };
 
 export const onMessageFunc = ({ discordBot }: CallbackParams) => {
-    discordBot.sendMessage('uffffffff');
+    discordBot.sendMessage('on message');
 };
