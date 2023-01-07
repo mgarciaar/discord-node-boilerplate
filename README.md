@@ -2,13 +2,9 @@
 
 ## Purpose of this project
 
----
-
 This package was first developed by the need of having an easy and extendable way to manage the basic functionalities of a Discord bot based on the [Discord.js](https://github.com/discordjs/discord.js/) module.
 
 ## How to start?
-
----
 
 Using this boilerplate, you should only take care of the services and the config file.
 
@@ -18,8 +14,6 @@ For example, you can have a Service for the "help" command, which will return al
 **Before starting the development** you MUST create the bot following the [Discord developer portal guidelines](https://discord.com/developers/applications) and, when you got your Bot's TOKEN, you need to create a `.env` file in the root with the same keys as `.env.example` file.
 
 ## Config file
-
----
 
 In this project you can find a `.config.ts` file. This file looks like this:
 
