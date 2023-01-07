@@ -3,7 +3,7 @@ import { onMessageFunc, onStartFunction } from './services/example.service.js';
 import { DiscordConfig } from './types.js';
 
 export const config: DiscordConfig = {
-    prefix: '!test',
+    prefix: '!example',
     permissions: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
@@ -18,7 +18,7 @@ export const config: DiscordConfig = {
         onStart: [onStartFunction],
         onMessage: [
             {
-                message: 'test',
+                message: 'example',
                 fn: onMessageFunc
             }
         ]
