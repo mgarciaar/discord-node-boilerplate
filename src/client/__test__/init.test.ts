@@ -28,7 +28,7 @@ describe('init file', () => {
 
         expect(DiscordBot.prototype.registerFunction).toHaveBeenNthCalledWith(
             1,
-            'fisrstCustomEvent',
+            'firstCustomEvent',
             expect.anything()
         );
 
