@@ -1,14 +1,19 @@
-import { ActivityType } from 'discord.js';
+import { Client } from 'discord.js';
 
-/* const modules =
+const mockedDiscordJs =
     jest.createMockFromModule<typeof import('discord.js')>('discord.js');
 
-modules.ActivityType = {
+mockedDiscordJs.ActivityType = {
     Playing: 'mock'
-} as any; */
+} as any;
 
-jest.mock('discord.js', () => ({
-    ActivityType: {
-        Playing: 'Mock'
+mockedDiscordJs.Client = jest.fn().mockImplementation((options) => ({
+    options,
+    login: jest.fn(),
+    on: jest.fn(),
+    user: {
+        setActivity: jest.fn()
     }
-}));
+})) as any;
+
+module.exports = mockedDiscordJs;

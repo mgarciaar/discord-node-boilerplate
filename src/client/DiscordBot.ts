@@ -26,7 +26,9 @@ class DiscordBot {
                 this.discordClient = new Client({ intents: permissions });
                 onReadyFn.map((fn) => this.registerFunction('ready', fn));
                 await this.discordClient.login(process.env.DISCORD_TOKEN);
-                this.setActivity(activity);
+                await this.discordClient.user?.setActivity(activity.name, {
+                    type: activity.type
+                });
             }
         } catch (e: any) {
             if (e.code === 'DisallowedIntents') {
@@ -36,14 +38,6 @@ class DiscordBot {
             }
 
             throw e;
-        }
-    }
-
-    private async setActivity({ name, type }: Activity) {
-        if (this.discordClient) {
-            await this.discordClient.user?.setActivity(name, {
-                type: type
-            });
         }
     }
 
