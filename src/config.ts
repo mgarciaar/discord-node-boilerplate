@@ -1,10 +1,6 @@
 import { ActivityType, GatewayIntentBits } from 'discord.js';
-import {
-    onCloseFunction,
-    onMessageFunc,
-    onStartFunction
-} from '../services/testService.js';
-import { DiscordConfig } from './config.d.js';
+import { onMessageFunc, onStartFunction } from './services/example.service.js';
+import { DiscordConfig } from './types.js';
 
 export const config: DiscordConfig = {
     prefix: '!test',
@@ -20,14 +16,14 @@ export const config: DiscordConfig = {
     },
     commands: {
         onStart: [onStartFunction],
-        onClose: [onCloseFunction],
         onMessage: [
             {
                 message: 'test',
                 fn: onMessageFunc
             }
         ]
-    }
+    },
+    customEvents: []
 };
 
 export default config;

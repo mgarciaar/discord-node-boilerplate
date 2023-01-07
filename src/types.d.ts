@@ -1,5 +1,10 @@
-import { ActivityType, Client, GatewayIntentBits } from 'discord.js';
-import DiscordBot from 'src/DiscordBot';
+import {
+    ActivityType,
+    ClientEvents,
+    GatewayIntentBits,
+    Message
+} from 'discord.js';
+import DiscordBot from './client/DiscordBot';
 
 export type Activity = {
     name: string;
@@ -12,16 +17,19 @@ export type DiscordConfig = {
     activity: Activity;
     commands: {
         onStart: Array<Callback>;
-        onClose: Array<Callback>;
         onMessage: Array<MessageCallback>;
     };
-};
-
-export type CallbackParams = {
-    discordBot: DiscordBot;
-    messageFromChat?: string;
+    customEvents?: Array<{
+        event: keyof ClientEvents;
+        fn: Callback;
+    }>;
 };
 
 export type Callback = (params: CallbackParams) => void;
+
+export type CallbackParams = {
+    discordBot: DiscordBot;
+    messageFromDiscord?: Message;
+};
 
 export type MessageCallback = { message: string; fn: Callback };

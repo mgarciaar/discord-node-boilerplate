@@ -1,11 +1,11 @@
 {
     "name": "discord-node-boilerplate",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.1.0",
     "type": "module",
     "scripts": {
-        "dev": "ts-node --esm ./src/main.ts",
-        "build": "tsc && node src/main.ts"
+        "dev": "ts-node --esm src/client/init",
+        "build": "tsc && node src/client/init"
     },
     "devDependencies": {
         "@types/node": "^18.11.9",

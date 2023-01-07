@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { config } from './config/config.js';
+import { config } from '../config.js';
 import DiscordBot from './DiscordBot.js';
 
 dotenv.config();
@@ -14,6 +14,12 @@ const configBot = async () => {
     );
 
     await discordBot.registerMessageCallback(config.commands.onMessage);
+
+    if (config.customEvents) {
+        config.customEvents.map(({ event, fn }) => {
+            discordBot.registerFunction(event, fn);
+        });
+    }
 };
 
 configBot();
