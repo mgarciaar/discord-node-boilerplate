@@ -1,8 +1,8 @@
 import { ActivityType, GatewayIntentBits } from 'discord.js';
-import { onMessageFunc, onStartFunction } from './services/example.service.js';
-import { DiscordConfig } from './types.js';
+import { onMessageFunc, onStartFunction } from './services/example.service';
+import { DiscordConfig } from './types';
 
-export const config: DiscordConfig = {
+const config: DiscordConfig = {
     prefix: '!example',
     permissions: [
         GatewayIntentBits.Guilds,

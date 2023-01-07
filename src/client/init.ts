@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-import { config } from '../config.js';
-import DiscordBot from './DiscordBot.js';
+import config from '../config';
+import DiscordBot from './DiscordBot';
 
 dotenv.config();
 

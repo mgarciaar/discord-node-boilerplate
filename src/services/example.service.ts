@@ -1,4 +1,4 @@
-import { CallbackParams } from 'src/types.d.js';
+import { CallbackParams } from 'src/types.d';
 
 export const onStartFunction = ({ discordBot }: CallbackParams) => {
     discordBot.sendMessageToFirstChannelAvailable('on start');

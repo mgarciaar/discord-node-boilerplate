@@ -5,7 +5,7 @@ import {
     Message,
     TextChannel
 } from 'discord.js';
-import { Activity, Callback, MessageCallback } from '../types.js';
+import { Activity, Callback, MessageCallback } from '../types';
 
 class DiscordBot {
     private prefix: string;
